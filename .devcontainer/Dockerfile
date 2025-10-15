@@ -10,4 +10,5 @@ RUN apt-get update \
 # Preinstall required Python packages to keep devcontainer builds reproducible.
 RUN pip install --no-cache-dir \
     httpx \
-    websocket-client
+    websocket-client \
+    azure-cognitiveservices-speech
