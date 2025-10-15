@@ -1,0 +1,14 @@
+.git
+.gitignore
+.speech-model-cache/
+.models/
+.vscode/
+**/__pycache__/
+**/*.py[cod]
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.*
+Dockerfile
