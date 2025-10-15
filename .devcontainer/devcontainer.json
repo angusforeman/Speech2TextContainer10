@@ -1,0 +1,40 @@
+{
+  "name": "Speech2Text CLI Dev",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.10-bullseye",
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true"
+    }
+  },
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "PYTHONUNBUFFERED": "1"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/.speech-model-cache,target=/workspaces/${localWorkspaceFolderBasename}/.models,type=bind"
+  ],
+  "forwardPorts": [
+    5000
+  ],
+  "portsAttributes": {
+    "5000": {
+      "label": "Speech Container"
+    }
+  },
+  "postCreateCommand": "bash -lc \"if [ -f requirements.txt ]; then pip install -r requirements.txt; fi\"",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
