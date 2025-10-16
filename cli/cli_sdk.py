@@ -76,14 +76,8 @@ def transcribe_audio(audio_path: Path, endpoint: str, api_key: str, region: str,
         print(f"[DEBUG] Endpoint: {endpoint}", file=sys.stderr)
         print(f"[DEBUG] Audio file: {audio_path}", file=sys.stderr)
     
-    # Create speech config pointing to the container
-    speech_config = speechsdk.SpeechConfig(
-        subscription=api_key,
-        region=region
-    )
-    
-    # Point to the container endpoint
-    speech_config.endpoint_id = endpoint
+    # Create speech config pointing to the container (not Azure cloud)
+    speech_config = speechsdk.SpeechConfig(host=endpoint)
     
     # Create audio config from file
     audio_config = speechsdk.AudioConfig(filename=str(audio_path))
