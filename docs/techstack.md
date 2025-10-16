@@ -11,8 +11,7 @@
 - Mount a persistent volume (for example `C:\speechdata:/mnt/speech`) to cache downloaded model bundles and reduce cold start times.
 
 ## Application Components
-- CLI demo implemented in Python 3.10+ (in a DevContainer) using `httpx` to call the container's REST diarization endpoint.
-- Optional FFmpeg preprocessing step to normalize audio (mono, 16 kHz WAV) before submission.
+- CLI demo implemented in Python 3.10+ (in a DevContainer) using Azure Speech SDK to call the container's REST diarization endpoint.
 - `.env` file or secure secret store providing container `Billing__SubscriptionKey`, `Billing__Region`, `Billing` (full HTTPS endpoint), and `APIKEY` (mirrors the subscription key for container auth).
 - PowerShell convenience script (`Invoke-SpeechDiarization.ps1`) to warm the container via `/status`, pass in configuration, and call the Python entry point.
 
@@ -60,11 +59,5 @@
 - With Docker Compose, model both services in one file; Compose creates a default network and DNS entries, so Python code inside the devcontainer can use `requests.post("http://speech:5000/...")`.
 - Ensure the Speech container listens on `0.0.0.0` and that host firewalls allow the published port if routing through the host.
 
-
-## Data Flow Overview
-1. User invokes the CLI with an audio file path.
-2. CLI (Python + `httpx`) posts the audio payload to `http://localhost:5000/speech/recognition/conversation/cognitiveservices/v1?language=en-US&format=detailed&diarizationEnabled=true`.
-3. Container processes the request, performs diarization, and returns JSON with speaker segments and transcripts.
-4. CLI renders the diarization timeline and transcript to stdout; optional log sink captures container output.
 
 
