@@ -1,0 +1,43 @@
+{
+  "name": "Speech2Text CLI Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/azure-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "enableNonRootDocker": "true"
+    }
+  },
+  "remoteUser": "vscode",
+  "remoteEnv": {
+    "PYTHONUNBUFFERED": "1",
+    "SPEECH_NETWORK": "speech-net"
+  },
+  "mounts": [
+    "source=${localWorkspaceFolder}/.speech-model-cache,target=/workspaces/${localWorkspaceFolderBasename}/.models,type=bind"
+  ],
+  "forwardPorts": [
+    5000
+  ],
+  "portsAttributes": {
+    "5000": {
+      "label": "Speech Container"
+    }
+  },
+  "postAttachCommand": "bash -lc 'echo \"Reminder: run ./scripts/validate_env.sh before invoking the diarization CLI.\"'",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.analysis.typeCheckingMode": "basic"
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}
