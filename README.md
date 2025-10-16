@@ -1,4 +1,5 @@
 # Speech2TextContainer10
+This is research spike code to validate the capabilities of Azure AI Containers running locally (in prep for running disconnected)   
 
 ## Docker hosted Azure Speech to text
 
