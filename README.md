@@ -19,7 +19,7 @@ docker rm -f speech-to-text-preview
 ```
 ### Start the local instance of the Azure AI Container
 ```bash
-./workspaces/Speech2TextContainer10/.env && docker run -d \
+docker run -d \
    --name speech-to-text-preview \
    --network speech-net \
    -p 5000:5000 \
@@ -28,12 +28,15 @@ docker rm -f speech-to-text-preview
    -e Billing="$Billing" \
    -e Billing__Region="$Billing__Region" \
    -e APIKEY="$APIKEY" \
-   mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text:5.0.3-preview-amd64-en-gb
+   mcr.microsoft.com/azure-cognitive-services/speechservices/speech-to-text:5.0.3-preview-amd64-en-us
 ```
 
 ### Run the Transcription Python CLI
 ```bash
+set -a && source .env && set +a #set the env vars
 python3 cli/cli_sdk.py --debug docs/assets/voice-sample16.wav
+python3 cli/cli_sdk.py --diarize ./docs/assets/katiesteve.wav #this fails at present due to lack of container immplementation conversation transcriber
+python3 cli/cli_sdk.py --diarize --cloud ./docs/assets/katiesteve.wav 
 ``` 
 # Spec Kit details
 
