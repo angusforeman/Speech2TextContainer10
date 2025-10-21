@@ -1,0 +1,21 @@
+# latency measurement
+# combined_wav=/workspaces/Speech2TextContainer10/assets/output/latency_combined_20251021T134120Z.wav
+# segment_columns: request_id|start_frame|end_frame|frames|audio_path|text
+# host=http://localhost:5001
+# voice=en-US-JennyNeural
+# max_queue=6
+# columns: request_id|decision|submit_ms|start_ms|first_audio_ms|queue_delay_ms|synth_latency_ms|text
+0cb1e970-6d5a-4b9b-a0b4-7070de9222e2|ACTIVE_STARTED|50664194|50664195|50664236|1|41|This is a test of multi phrase latency
+8f6b2c54-c607-4eda-b17d-837e7ec8487a|QUEUED|50664215|50664303|50664335|88|32|Here is another quick test following on
+d0f66f3d-7467-45e1-9735-16a5342e9fe2|QUEUED|50664235|50664389|50664420|154|31|Phrase number 3
+fbb23f6f-eb56-4a53-9339-c78c45d548d7|QUEUED|50664256|50664469|50664500|213|31|And here is the fourth phrase
+f2a1fdf8-0adb-41ac-9c49-ba6019c99ae3|QUEUED|50664276|50664557|50664588|281|31|And a fifth, as in fifth column
+b2c345d7-8974-4091-b206-aa66e147eef3|QUEUED|50664296|50664636|50664666|340|30|Sixth
+ffcb9a96-b36c-4fee-8afd-85f3183d83c4|QUEUED|50664316|50664717|50664747|401|30|Finally 7th
+SEG|0cb1e970-6d5a-4b9b-a0b4-7070de9222e2|0|31200|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|This is a test of multi phrase latency
+SEG|8f6b2c54-c607-4eda-b17d-837e7ec8487a|31200|62400|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|Here is another quick test following on
+SEG|d0f66f3d-7467-45e1-9735-16a5342e9fe2|62400|93600|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|Phrase number 3
+SEG|fbb23f6f-eb56-4a53-9339-c78c45d548d7|93600|124800|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|And here is the fourth phrase
+SEG|f2a1fdf8-0adb-41ac-9c49-ba6019c99ae3|124800|156000|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|And a fifth, as in fifth column
+SEG|b2c345d7-8974-4091-b206-aa66e147eef3|156000|187200|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|Sixth
+SEG|ffcb9a96-b36c-4fee-8afd-85f3183d83c4|187200|218400|31200|/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav|Finally 7th

@@ -1,0 +1,65 @@
+{
+  "generated_utc": "2025-10-21T13:41:21Z",
+  "host": "http://localhost:5001",
+  "voice": "en-US-JennyNeural",
+  "max_queue": 6,
+  "combined_wav": "/workspaces/Speech2TextContainer10/assets/output/latency_combined_20251021T134120Z.wav",
+  "segments": [
+    {
+      "request_id": "0cb1e970-6d5a-4b9b-a0b4-7070de9222e2",
+      "text": "This is a test of multi phrase latency",
+      "start_frame": 0,
+      "end_frame": 31200,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    },
+    {
+      "request_id": "8f6b2c54-c607-4eda-b17d-837e7ec8487a",
+      "text": "Here is another quick test following on",
+      "start_frame": 31200,
+      "end_frame": 62400,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    },
+    {
+      "request_id": "d0f66f3d-7467-45e1-9735-16a5342e9fe2",
+      "text": "Phrase number 3",
+      "start_frame": 62400,
+      "end_frame": 93600,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    },
+    {
+      "request_id": "fbb23f6f-eb56-4a53-9339-c78c45d548d7",
+      "text": "And here is the fourth phrase",
+      "start_frame": 93600,
+      "end_frame": 124800,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    },
+    {
+      "request_id": "f2a1fdf8-0adb-41ac-9c49-ba6019c99ae3",
+      "text": "And a fifth, as in fifth column",
+      "start_frame": 124800,
+      "end_frame": 156000,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    },
+    {
+      "request_id": "b2c345d7-8974-4091-b206-aa66e147eef3",
+      "text": "Sixth",
+      "start_frame": 156000,
+      "end_frame": 187200,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    },
+    {
+      "request_id": "ffcb9a96-b36c-4fee-8afd-85f3183d83c4",
+      "text": "Finally 7th",
+      "start_frame": 187200,
+      "end_frame": 218400,
+      "frames": 31200,
+      "audio_path": "/workspaces/Speech2TextContainer10/assets/output/tts_20251021T134120Z.wav"
+    }
+  ]
+}

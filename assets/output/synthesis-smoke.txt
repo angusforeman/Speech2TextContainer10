@@ -1,0 +1,8 @@
+text=Hello near real time
+voice=en-US-JennyNeural
+latency_ms=1860
+success=True
+reason=OK
+error=
+host=http://localhost:5001
+audio_path=/workspaces/Speech2TextContainer10/assets/output/tts_20251021T133958Z.wav
