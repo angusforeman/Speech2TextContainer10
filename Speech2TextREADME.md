@@ -9,6 +9,9 @@ The Current Implementation supports
 
 ## Sample of Docker hosted Azure Speech to text called from CLI
 
+### Envs
+set -a && source .env && set +a
+
 ### Setup docker network (with errors hidden by pipig to null)
 ```bash
 docker network create speech-net 2>/dev/null || true
