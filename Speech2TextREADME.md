@@ -9,6 +9,9 @@ The Current Implementation supports
 
 ## Sample of Docker hosted Azure Speech to text called from CLI
 
+### Envs
+set -a && source .env && set +a
+
 ### Setup docker network (with errors hidden by pipig to null)
 ```bash
 docker network create speech-net 2>/dev/null || true
@@ -34,9 +37,9 @@ docker run -d \
 ### Run the Transcription Python CLI
 ```bash
 set -a && source .env && set +a #set the env vars
-python3 cli/cli_sdk.py --debug docs/assets/voice-sample16.wav
-python3 cli/cli_sdk.py --diarize ./docs/assets/katiesteve.wav #this fails at present due to lack of container immplementation conversation transcriber
-python3 cli/cli_sdk.py --diarize --cloud ./docs/assets/katiesteve.wav 
+python3 cli/s2t_cli_sdk.py --debug docs/assets/voice-sample16.wav
+python3 cli/s2t_cli_sdk.py --diarize ./docs/assets/katiesteve.wav #this fails at present due to lack of container immplementation conversation transcriber
+python3 cli/s2t_cli_sdk.py --diarize --cloud ./docs/assets/katiesteve.wav 
 ``` 
 # Spec Kit details
 
