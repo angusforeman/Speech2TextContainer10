@@ -1,0 +1,4 @@
+2025-10-21T13:38:50Z|ready-endpoint|FAIL|http://localhost:5001/ready -> 000000
+2025-10-21T13:38:50Z|status-endpoint|FAIL|http://localhost:5001/status -> 000000
+2025-10-21T13:38:50Z|evidence-path|INFO|Env log: /workspaces/Speech2TextContainer10/assets/output/environment-check.txt
+2025-10-21T13:38:50Z|evidence-path|INFO|Health log: /workspaces/Speech2TextContainer10/assets/output/health-check.txt

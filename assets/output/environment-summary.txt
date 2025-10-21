@@ -1,0 +1,2 @@
+Summary: PASS=10 FAIL=2 WARN=3 INFO=4
+Overall Result: ATTENTION (FAIL entries present, review logs)

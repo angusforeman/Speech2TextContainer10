@@ -1,0 +1,62 @@
+openapi: 3.0.3
+info:
+  title: NearRealTimeText2Speech Local Interface
+  version: 0.1.0-spike
+  description: Conceptual contract for TTS feature actions (CLI-driven; not all endpoints implemented as HTTP in spike).
+servers:
+  - url: http://localhost:5001
+paths:
+  /ready:
+    get:
+      summary: Container readiness
+      responses:
+        '200':
+          description: Service ready
+        '503':
+          description: Service unavailable
+  /synthesize:
+    post:
+      summary: Synthesize a single line of text to streamed PCM audio
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [text]
+              properties:
+                text:
+                  type: string
+                  maxLength: 500
+                diagnostic:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Streaming will begin (conceptual)
+        '400':
+          description: Invalid input length
+        '503':
+          description: Service unavailable
+  /ping:
+    get:
+      summary: Lightweight readiness probe (maps to CLI --ping)
+      responses:
+        '200':
+          description: READY indicator
+        '500':
+          description: Configuration error
+components:
+  schemas:
+    SynthesisRequest:
+      type: object
+      properties:
+        request_id: { type: string }
+        status: { type: string, enum: [pending, active, completed, failed] }
+        latency_ms: { type: number }
+        voice_used: { type: string }
+        audio_format: { type: string }
+        chunk_timestamps:
+          type: array
+          items: { type: number }
+        failure_reason: { type: string }

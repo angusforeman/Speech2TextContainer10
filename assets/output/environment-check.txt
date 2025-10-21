@@ -1,0 +1,15 @@
+2025-10-21T13:38:47Z|docker-daemon|PASS|docker info succeeded
+2025-10-21T13:38:47Z|docker-network|PASS|Network speech-net present
+2025-10-21T13:38:47Z|api-key-fallback|WARN|ApiKey not set; using Billing__SubscriptionKey as ApiKey
+2025-10-21T13:38:47Z|api-key|PASS|ApiKey present (length 84)
+2025-10-21T13:38:47Z|billing-endpoint|PASS|Billing endpoint present
+2025-10-21T13:38:47Z|voice-name|INFO|VOICE_NAME not set; will use SDK default en-US-JennyNeural
+2025-10-21T13:38:47Z|host-avx2|PASS|AVX2 supported
+2025-10-21T13:38:48Z|audio-device-aplay|WARN|aplay not found; PCM playback may rely on Python package only
+2025-10-21T13:38:48Z|python-simpleaudio|WARN|Python check failed
+2025-10-21T13:38:49Z|docker-pull|PASS|Pulled mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech:latest
+2025-10-21T13:38:49Z|container-start|INFO|Starting neural-tts using mcr.microsoft.com/azure-cognitive-services/speechservices/neural-text-to-speech:latest
+2025-10-21T13:38:49Z|container-start|PASS|Started neural-tts (host port 5001)
+2025-10-21T13:38:49Z|container-env-eula|PASS|Eula=accept set
+2025-10-21T13:38:49Z|container-env-apikey|PASS|ApiKey present
+2025-10-21T13:38:49Z|container-env-billing|PASS|Billing present
